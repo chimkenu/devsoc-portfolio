@@ -1,72 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcus Alejo - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+@media only screen and (max-width: 1000px) {
+    #name {
+        display: none;
+    }
+}
 
-<body>
-    <main class="parent">
-        <section class="child">
-            <div id="name" class="small">
-                <h1>Marcus Alejo</h1>
-                <p>about me</p>
-            </div>
-            <div class="big">
-                <img id="picture" src="https://media.discordapp.net/attachments/1098176287274709052/1281271965088350208/20240216_195128.jpg?ex=66db1d01&is=66d9cb81&hm=4fa1ab0339e86bfbe7a453ad4e510c4fde37f48597c4c6d2470505f1b9ce3f34&=&format=webp&width=526&height=701" alt="waiter drip">
-                <span>(me in the waiter fit)</span>
-            </div>
-        </section>
-        <section class="child hoverable">
-            <h2>who???</h2>
-            <p>i am a first year (this is my first term)</p>
-            <p>taking a math and computer science degree</p>
-            <p>i am filipino</p>
-            <p></p>
-        </section>
-        <section class="child hoverable">
-            <h2>what do i do???</h2>
-            <p>i code minigames in minecraft (plugins)</p>
-            <p><a href="https://github.com/chimkenu/Expunge">L4D2 in mc</a></p>
-            <p><a href="https://github.com/chimkenu/MangaX">anime fighting in mc</a></p>
-            <p><a href="https://github.com/chimkenu">lethal company in mc</a> (this one im still working on)</p>
-            <p>i play the piano</p>
-            <p>badminton (occasionally)</p>
-        </section>
-        <section class="child hoverable">
-            <h2>okay, but what else???</h2>
-            <p>i love listening to <a href="https://www.youtube.com/@SirSunlight">SirSunlight</a></p>
-            <p>did you know <a href="https://www.youtube.com/@SirSunlight">SirSunlight</a> is <a href="https://www.youtube.com/post/Ugkxh0dLQUhf493Jym3WFSyjLFLyU3rbPYc0">releasing an EP today???</a></p>
-            <p><a href="https://www.youtube.com/@SirSunlight">SirSunlight</a> is my favorite artist</p>
-            <p>actually this is just me glazing <a href="https://www.youtube.com/@SirSunlight">SirSunlight</a> (please listen to his stuff)</p>
-        </section>
-        <section class="child hoverable">
-            <h2>contact???</h2>
-            <p><a href="https://www.instagram.com/chimkenu?igsh=bW1yZXllejJ6OXF4">chimkenu</a> on instagram</a></p>
-            <p>@chimkenu on discord</a></p>
-            <p>also chimkenu on <a href="https://github.com/chimkenu">github</a></p>
-        </section>
-    </main>
-</body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<script>
-    setInterval(function() {
-        [...document.getElementsByClassName('hoverable')].forEach(element => {
-            console.log(element.style.backgroundRepeat);
-            if (!element.matches(":hover")) {
-                [...element.children].forEach(child => {
-                    child.style.transform = "matrix(" + Math.random() + "," + Math.random() + "," + Math.random() + "," + Math.random() + "," + Math.random() + "," + Math.random() + ")";
-                })
-            } else {
-                [...element.children].forEach(child => {
-                    child.style.transform = "none";
-                })
-            }
-        })
-    }, 400);
-</script>
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    color: #fff;
+}
 
-</html>
+h1, h2 {
+    font-size: xx-large;
+}
+
+p {
+    font-size: larger;
+}
+
+span {
+    font-size: medium;
+}
+
+a {
+    color: #626;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.parent {
+    background-color: #02101a;
+    --scroll-gap: 2em;
+    height: 100vh;
+    overflow: auto;
+    padding: var(--scroll-gap);
+    scroll-snap-type: y mandatory;
+}
+
+.child {
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 3 * var(--scroll-gap));
+    border-radius: 0.4em;
+    padding: 1.25em;
+    margin: 3.5em 0;
+    box-shadow: 0 0.9px 1.5px rgba(0, 0, 0, 0.03), 0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+}
+
+.child>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.small {
+    width: 40%;
+}
+
+.big {
+    width: 60%;
+}
+
+#picture {
+    height: 500px;
+    width: 500px;
+    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.03), 0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.child:not(:last-child) {
+    margin-bottom: var(--scroll-gap);
+}
+
+.child:nth-child(1) {
+    background: transparent;
+}
+
+.child:nth-child(2) {
+    background-color: #0d7377;
+}
+
+.child:nth-child(3) {
+    background-color: #92764b;
+}
+
+.child:nth-child(4) {
+    background-color: #854b92;
+}
+
+.child:nth-child(5) {
+    background: transparent;
+}
+
+/* i stole this */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #021420 #02101a;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #02101a;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #021420;
+    border-radius: 10px;
+    border: 0px none #021420;
+}
+
+@media only screen and (min-width: 1000px) {
+    .hoverable {
+        background-repeat: no-repeat;
+    
+    }
+
+    .hoverable h2 {
+        position: relative;
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .hoverable p {
+        position: relative;
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .hoverable:hover {
+        background-repeat: repeat;
+    }
+}
