@@ -6,6 +6,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcus Alejo - Portfolio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@media only screen and (max-width: 1000px) {
+    #name {
+        display: none;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    color: #fff;
+}
+
+h1, h2 {
+    font-size: xx-large;
+}
+
+p {
+    font-size: larger;
+}
+
+span {
+    font-size: medium;
+}
+
+a {
+    color: #626;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.parent {
+    background-color: #02101a;
+    --scroll-gap: 2em;
+    height: 100vh;
+    overflow: auto;
+    padding: var(--scroll-gap);
+    scroll-snap-type: y mandatory;
+}
+
+.child {
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 3 * var(--scroll-gap));
+    border-radius: 0.4em;
+    padding: 1.25em;
+    margin: 3.5em 0;
+    box-shadow: 0 0.9px 1.5px rgba(0, 0, 0, 0.03), 0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+}
+
+.child>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.small {
+    width: 40%;
+}
+
+.big {
+    width: 60%;
+}
+
+#picture {
+    height: 500px;
+    width: 500px;
+    box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.03), 0 3.1px 5.5px rgba(0, 0, 0, 0.08), 0 14px 25px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.child:not(:last-child) {
+    margin-bottom: var(--scroll-gap);
+}
+
+.child:nth-child(1) {
+    background: transparent;
+}
+
+.child:nth-child(2) {
+    background-color: #0d7377;
+}
+
+.child:nth-child(3) {
+    background-color: #92764b;
+}
+
+.child:nth-child(4) {
+    background-color: #854b92;
+}
+
+.child:nth-child(5) {
+    background: transparent;
+}
+
+/* i stole this */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #021420 #02101a;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #02101a;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #021420;
+    border-radius: 10px;
+    border: 0px none #021420;
+}
+
+@media only screen and (min-width: 1000px) {
+    .hoverable {
+        background-repeat: no-repeat;
+    
+    }
+
+    .hoverable h2 {
+        position: relative;
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .hoverable p {
+        position: relative;
+        transition: transform 0.75s ease-in-out;
+    }
+
+    .hoverable:hover {
+        background-repeat: repeat;
+    }
+}
+    </style>
 </head>
 
 <body>
